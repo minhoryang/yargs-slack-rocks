@@ -1,0 +1,56 @@
+{
+  "name": "yargs-slack-rocks",
+  "version": "0.0.0-meaningless",
+  "description": "yargs-slack-rocks",
+  "main": "dist/cjs/src/index.js",
+  "module": "dist/esm/src/index.js",
+  "types": "dist/cjs/src/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": "20",
+    "npm": "PLEASE-USE-YARN",
+    "yarn": "^1"
+  },
+  "scripts": {
+    "cli": "yarn ts-node dist/esm/entrypoint-cli.js",
+    "cli:cjs": "yarn ts-node dist/cjs/entrypoint-cli.js",
+    "lint": "eslint --ext .ts .",
+    "prebuild": "yarn",
+    "prebuild:cjs": "yarn",
+    "build": "tsc -p tsconfig.esm.json && tsc",
+    "build:cjs": "tsc",
+    "run:server": "ts-node dist/esm/entrypoint-cli.js run_server",
+    "run:server:cjs": "ts-node dist/cjs/entrypoint-cli.js run_server",
+    "prepare": "ts-patch install && typia patch"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/cjs/src/index.d.ts",
+      "import": "./dist/esm/src/index.js",
+      "require": "./dist/cjs/src/index.js"
+    }
+  },
+  "license": "MIT",
+  "author": "Minho Ryang (minhoryang@gmail.com)",
+  "repository": {"url": "https://github.com/minhoryang/yargs-slack-rocks"},
+  "dependencies": {
+    "typia": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "@types/yargs": "^17.0.32",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "body-parser": "^1.20.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "express": "^4.19.2",
+    "ts-node": "^10.9.2",
+    "ts-patch": "^3.1.2",
+    "typescript": "^5.4.5",
+    "yargs": "^17.7.2"
+  }
+}

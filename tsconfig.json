@@ -1,0 +1,50 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "module": "CommonJS",
+    "pretty": true,
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "outDir": "dist/cjs",
+    "baseUrl": "src",
+    "rootDirs": [
+      "src",
+      "src_external_interfaces"
+    ],
+    "allowJs": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "plugins": [
+      {
+        "transform": "typia/lib/transform"
+      }
+    ],
+    "strictNullChecks": true
+  },
+  "include": [
+    "entrypoint-cli.ts",
+    "src/**/*.ts",
+    "src/**/*.json",
+    "src_external_interfaces/**/*.ts",
+    ".env"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
